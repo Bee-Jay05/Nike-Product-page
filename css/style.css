@@ -1,0 +1,166 @@
+body {
+  cursor: none !important;
+}
+.container {
+  /* font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;   */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  background-color: #7109b7d7;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.5s ease;
+}
+.custom-cursor::after {
+  position: absolute;
+  content: '';
+  background-color: transparent;
+  border: 1px solid #7209B7;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+}
+.custom-cursor.cursor-hover::after {
+  transform: scale(2);
+}
+/* header {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+} */
+/* header {
+  background: linear-gradient(180deg, #91e5ff, rgba(255, 255, 255, 0));
+} */
+nav ul li a {
+  color: #000;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #4361EE;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+  transform: scaleX(1);
+}
+nav ul li a:hover {
+  color: #4361EE;
+}
+
+.hero-line{
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  margin-top:36px;
+  font-size: 64px;
+  background: linear-gradient(45deg, #7209B7, #F72585, #4CC9F0, #7209B7);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: pop-in 0.6s ease-out forwards;
+  animation-delay: 0.2s;
+  /* background: linear-gradient(180deg, #4361EE, #dca8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; */
+  animation: shine 4s linear infinite;
+}
+@keyframes shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+main {
+  position: relative;
+}
+main img {
+  position: absolute;
+  top: 140px;
+  left: 50%;
+  animation: slight-bounce 5s linear infinite;
+  /* animation: slideInBounce 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; */
+}
+@keyframes slight-bounce {
+  0% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px) rotate(2deg); }
+  100% { transform: translate(-50%, 0); }
+}
+main button {
+  margin-top: 480px;
+  border: 1px solid #4361EE;
+  color: #4361EE;
+  background: transparent;
+  z-index: 100;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
+}
+main button:hover {
+  background: linear-gradient(135deg, #4CC9F0, #7209B7);
+  color: #fff;
+}
+main button:active {
+  transform: scale(0.95);
+  transition: all 0.1s ease-in-out;
+}
+@keyframes pop-in {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+/* @keyframes slideInBounce {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+} */
+.blob {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: slight-bounce-2 5s linear infinite;
+}
+.pink {
+  background: #ff6ec4;
+  bottom: 0%;
+  left: 20%;
+  z-index: -1;
+}
+.blue {
+  background: #01c8ee;
+  bottom: 40%;
+  right: 15%;
+  z-index: -1;
+  
+  
+}
+@keyframes slight-bounce-2 {
+  0% { transform: translateY(-20px); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
